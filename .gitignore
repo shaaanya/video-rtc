@@ -1,0 +1,50 @@
+# Binaries
+server
+*.exe
+*.exe~
+*.dll
+*.so
+*.dylib
+
+# Test binary
+*.test
+
+# Output of the go coverage tool
+*.out
+
+# Go workspace file
+go.work
+
+# Build artifacts
+web/dist/
+webembed/dist/
+
+# Dependency directories
+node_modules/
+web/node_modules/
+
+# Logs
+*.log
+
+# Environment variables
+.env
+.env.local
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Temporary files
+tmp/
+*.tmp
+
+# Plans
+PLAN.md
+implementation_plan.md
