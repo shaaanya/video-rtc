@@ -1,23 +1,5 @@
 # 🎥 WebRTC Video Call Application
 
-A premium, self-hosted 1:1 WebRTC video calling application with end-to-end encryption. Built with Go backend and React/TypeScript frontend.
-
-## ✨ Features
-
-- **🔒 Secure**: End-to-end encrypted peer-to-peer video calling
-- **🎨 Premium Design**: Modern UI with glassmorphism effects and smooth animations
-- **⚡ Fast**: Direct peer-to-peer connections with WebRTC
-- **🚀 Self-Hosted**: Complete control over your infrastructure
-- **📱 Responsive**: Works on desktop, tablet, and mobile devices
-- **🎯 Simple**: No registration required - just share a room ID
-
-## 🏗️ Architecture
-
-- **Backend**: Go with Chi router and WebSocket signaling
-- **Frontend**: React + TypeScript + Vite
-- **Real-time**: WebSocket signaling server for WebRTC negotiation
-- **Deployment**: Single binary with embedded frontend assets
-
 ## 🚀 Quick Start
 
 ### Prerequisites
@@ -67,46 +49,6 @@ This will:
 3. Share the generated room ID with another person
 4. Both users join the same room to start the call
 
-## 🎨 Design Features
-
-The application features a premium, modern design with:
-
-- **Vibrant color gradients** using HSL colors for richer aesthetics
-- **Glassmorphism effects** with backdrop blur on UI elements
-- **Smooth animations** with cubic-bezier easing
-- **Micro-interactions** on hover and focus states
-- **Animated background** with subtle gradient shifting
-- **Premium typography** using Inter font family
-- **Dark theme** optimized for video calling
-- **Responsive layout** that adapts to all screen sizes
-
-## 📁 Project Structure
-
-```
-.
-├── cmd/server/          # Main entry point
-│   └── main.go
-├── internal/
-│   ├── httpserver/      # HTTP routing and handlers
-│   │   └── router.go
-│   └── ws/              # WebSocket signaling
-│       ├── hub.go       # Room management
-│       └── handler.go   # WebSocket handler
-├── web/                 # Frontend source
-│   ├── src/
-│   │   ├── App.tsx      # Main React component
-│   │   ├── webrtc.ts    # WebRTC manager
-│   │   ├── ws.ts        # WebSocket client
-│   │   ├── index.css    # Design system
-│   │   └── ui.css       # Component styles
-│   └── dist/            # Built assets (generated)
-├── webembed/            # Go embed package
-│   ├── fs.go
-│   └── dist/            # Embedded assets (copied from web/dist)
-├── build.sh             # Build automation script
-└── server               # Compiled binary (generated)
-```
-
 ## 🔧 Development
 
 ### Frontend Development
@@ -153,14 +95,6 @@ This will automatically start ngrok and provide a public URL.
 - `NGROK_BIN`: Path to ngrok binary
 
 You can also drop a `.env` file (see `.env.example`). Flags still work and override env values; env overrides defaults.
-
-## 🔐 Security Considerations
-
-- **E2E Encryption**: WebRTC uses DTLS-SRTP for media encryption
-- **Signaling**: WebSocket signaling should be secured with TLS in production
-- **CORS**: Use specific origins in production (disable `-allow-all-origins`)
-- **TURN Server**: Use authenticated TURN servers for NAT traversal
-- **Room IDs**: Consider using UUIDs or stronger room ID generation
 
 ## 🛠️ Configuration
 
@@ -209,33 +143,3 @@ This project is provided as-is for educational and self-hosting purposes.
 - [ ] Network quality indicators
 - [ ] Persistent room URLs
 - [ ] Mobile app versions
-
-## 🐛 Troubleshooting
-
-### Video/Audio Not Working
-
-1. Check browser permissions for camera/microphone
-2. Ensure you're using HTTPS (required for WebRTC on non-localhost)
-3. Check ICE server configuration
-4. Look for errors in browser console
-
-### Connection Issues
-
-1. Check firewall settings
-2. Configure TURN servers for NAT traversal
-3. Verify WebSocket connection is established
-4. Check network connectivity
-
-### Build Issues
-
-1. Ensure Node.js and Go are properly installed
-2. Run `npm install` in the web directory
-3. Check Go module dependencies with `go mod tidy`
-
-## 📞 Support
-
-For issues or questions, check the browser console for errors and the server logs for backend issues.
-
----
-
-**Built with ❤️ using Go, React, and WebRTC**
